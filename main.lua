@@ -16,10 +16,10 @@
 ---- #                                                                       #
 ---- #########################################################################
 
--- Widget to display the levels of lipo/HVLipo battery with Mha Used based on battery voltage
+-- Widget to display the levels of lipo/HVLipo battery with mAh Used based on battery voltage
 -- JRWieland
 -- Date: 2024
-local app_name = "Batt/MHa"
+local app_name = "Batt/mAh"
 local app_ver = "1.0"
 
 local _options = {
@@ -115,7 +115,7 @@ local function refreshZoneTiny(wgt)
   getCellPercent(wgt)
   -- local battCell=wgt.options.Cells   
   local battDis = wgt.options.Capacity
-  local MhaUsed = (battDis*((100-wgt.cellPercent)/100))
+  local mAhUsed = (battDis*((100-wgt.cellPercent)/100))
 
   function comma(amount)
     local formatted = amount
@@ -128,7 +128,7 @@ local function refreshZoneTiny(wgt)
     return formatted
   end
 
-  lcd.drawText(0,0,comma(MhaUsed).." Mha",SMLSIZE+WHITE)-- Change or remove color if desired
+  lcd.drawText(0,0,comma(mAhUsed).." Mha",SMLSIZE+WHITE)-- Change or remove color if desired
   lcd.drawText(0,15, string.format("%2.0f%%",wgt.cellPercent).." Left",SMLSIZE+WHITE)
 end 
 
@@ -138,7 +138,7 @@ local function refreshZoneSmall(wgt)
   getCellPercent(wgt)
   local battCell=wgt.options.Cells   
   local battDis = wgt.options.Capacity
-  local MhaUsed = (battDis*((100-wgt.cellPercent)/100))
+  local mAhUsed = (battDis*((100-wgt.cellPercent)/100))
 
   function comma(amount)
     local formatted = amount
@@ -154,7 +154,7 @@ local function refreshZoneSmall(wgt)
   if getValue("Cels") == 0 then 
     lcd.drawText(2,18, "Not Detected") 
   else
-    lcd.drawText(2,18,comma(MhaUsed).." Used / ".. string.format("%2.0f%%",  wgt.cellPercent).." Left")
+    lcd.drawText(2,18,comma(mAhUsed).." Used / ".. string.format("%2.0f%%",  wgt.cellPercent).." Left")
   end 
 end
 
