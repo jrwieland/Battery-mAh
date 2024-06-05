@@ -1,7 +1,7 @@
 # Battery Percentage and mAh Used
 Widget to display the levels of Lipo/HV-Lipo battery with mAh Used based on battery voltage from 'Cels' sensor (FLVSS)     
 
-<img src="https://github.com/jrwieland/Battery-mAh/blob/main/Screenshots/4_2lipo.png" width="300">  <img src="https://github.com/jrwieland/Battery- mAh /blob/main/Screenshots/4_35lipo.png" width="300">    
+<img src="https://github.com/jrwieland/Battery-mAh/blob/main/Screenshots/4_2lipo.png" width="300">  <img src="https://github.com/jrwieland/Battery-mAh/blob/main/Screenshots/4_35lipo.png" width="300">    
   
 If you've ever wondered what % of your battery was left and how much mAh you've used     
 This widget will display them based on the lowest cell from the telemetry obtained from the (FLVSS).
@@ -16,7 +16,8 @@ The live readings are taken from the lowest cell of your pack while connected.
 The % and mAh  numbers typically rise after a flight since the load is reduced and the battery settles.     
 
 ## Setup
-Download the release [BattmAh.zip](https://github.com/jrwieland/Battery- mAh /releases/download/v1.0/BattmAh.zip)    
+Download the release [BattmAh.zip](https://github.com/jrwieland/Battery-mAh/releases/download/v1.0/BattmAh.zip)       
+
 Extract the folder to the WIDGETS folder on the SD card     
 Select the Widget from the screen     
 
@@ -29,4 +30,4 @@ Options available
  
   
 ## Assets
-[BattmAh.zip](https://github.com/jrwieland/Battery- mAh /releases/download/v1.0/BattmAh.zip)
+[BattmAh.zip](https://github.com/jrwieland/Battery-mAh/releases/download/v1.0/BattmAh.zip)
