@@ -55,9 +55,9 @@ local function getCellPercent(wgt, cellValue)
   local result = 0;
 
   if wgt.options.Voltage >= "4.21"then
-    loadScript("/WIDGETS/FlightBattery/4_35lipo.lua")()
+    loadScript("/WIDGETS/BattmAh/4_35lipo.lua")()
   else
-    loadScript("/WIDGETS/FlightBattery/4_2lipo.lua")()
+    loadScript("/WIDGETS/BattmAh/4_2lipo.lua")()
   end
 
   local _percentSplit = lipoValue
