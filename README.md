@@ -27,7 +27,17 @@ Options available
 * Setting the number of cells (this is for a visual indication of the battery you’re flying and has no effect on the calculations)
 * Setting the voltage of the cells in the pack.  There is a different chart for 4.2 Lipo’s & 4.35 HV-Lipo’s
  ![Edit Settings](/Screenshots/edit.png)
- 
+
+## Streamlined Version
+If you prefer to use a calculted sensor as I do, it eliminates alot in internal lookups and makes it easier to install into existing scripts     
+Download this version here [BattmAh_v1.1.zip](https://github.com/jrwieland/Battery-mAh/releases/download/v1.0/BattmAh_v1.1.zip)     
+Extract the files to the Widgets folder    
+Create a calculated sensor      
+Here is what is hard coded  (instructions are included for using the sensor widget option with this version within the main.lua file    
+![Calculated sensor](/Screenshots/sensor.png)      
+
+Download this version here [BattmAh_v1.1.zip](https://github.com/jrwieland/Battery-mAh/releases/download/v1.0/BattmAh_v1.1.zip)     
   
 ## Assets
-[BattmAh.zip](https://github.com/jrwieland/Battery-mAh/releases/download/v1.0/BattmAh.zip)
+Initial Version [BattmAh.zip](https://github.com/jrwieland/Battery-mAh/releases/download/v1.0/BattmAh.zip)       
+Streamlined Version [BattmAh_v1.1.zip](https://github.com/jrwieland/Battery-mAh/releases/download/v1.1/BattmAh_v1.1.zip)        
