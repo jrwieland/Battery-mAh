@@ -20,7 +20,7 @@
 -- JRWieland
 -- Date: 2024
 local app_name = "Batt/mAh"
-local app_ver = "1.1"
+local app_ver = "1.2"
 
 local _options = {
 --{ "Sensor", SOURCE, 0}, -- I hard coded the sensor into the widgets, if you wish to have source chage the lines noted below in the comments
@@ -71,20 +71,20 @@ end
 local function refreshZoneTiny(wgt)
   local battCell=wgt.options.Cells   
   local battDis = wgt.options.Capacity
-  local mAhUsed = (battDis*((100-wgt.cellPercent)/100))
+  local mAhUsed = (battDis*((wgt.cellPercent)/100))
   
   lcd.drawText(0,0,comma(mAhUsed).." Mha",SMLSIZE+WHITE)-- Change or remove color if desired
-  lcd.drawText(0,15, string.format("%2.0f%%",wgt.cellPercent).." Left",SMLSIZE+WHITE)
+  lcd.drawText(0,15, string.format("%2.0f%%",wgt.cellPercent),SMLSIZE+WHITE)
 end 
 
 --- Zone size: others
 local function refreshZoneSmall(wgt)
   local battCell=wgt.options.Cells   
   local battDis = wgt.options.Capacity
-  local mAhUsed = (battDis*((100-wgt.cellPercent)/100))
+  local mAhUsed = (battDis*((wgt.cellPercent)/100))
 
   lcd.drawText(2,0,comma(battDis).." "..battCell.."S Lipo "..wgt.options.Voltage.."v/cell")
-  lcd.drawText(2,18,comma(mAhUsed).." Used / ".. string.format("%2.0f%%", wgt.cellPercent).." Left")
+  lcd.drawText(2,18,comma(mAhUsed).." Used / ".. string.format("%2.0f%%", wgt.cellPercent))
 end 
 
 local function refresh(wgt)
