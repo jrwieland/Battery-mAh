@@ -20,7 +20,7 @@
 -- JRWieland
 -- Date: 2024
 local app_name = "Batt/mAh"
-local app_ver = "1.0"
+local app_ver = "1.2"
 
 local _options = {
   { "Sensor", SOURCE, 0}, -- use'Cels'
@@ -115,7 +115,7 @@ local function refreshZoneTiny(wgt)
   getCellPercent(wgt)
   -- local battCell=wgt.options.Cells   
   local battDis = wgt.options.Capacity
-  local mAhUsed = (battDis*((100-wgt.cellPercent)/100))
+  local mAhUsed = (battDis*((wgt.cellPercent)/100))
 
   function comma(amount)
     local formatted = amount
@@ -129,7 +129,7 @@ local function refreshZoneTiny(wgt)
   end
 
   lcd.drawText(0,0,comma(mAhUsed).." Mha",SMLSIZE+WHITE)-- Change or remove color if desired
-  lcd.drawText(0,15, string.format("%2.0f%%",wgt.cellPercent).." Left",SMLSIZE+WHITE)
+  lcd.drawText(0,15, string.format("%2.0f%%",wgt.cellPercent),SMLSIZE+WHITE)
 end 
 
 --- Zone size: others
@@ -138,7 +138,7 @@ local function refreshZoneSmall(wgt)
   getCellPercent(wgt)
   local battCell=wgt.options.Cells   
   local battDis = wgt.options.Capacity
-  local mAhUsed = (battDis*((100-wgt.cellPercent)/100))
+  local mAhUsed = (battDis*((wgt.cellPercent)/100))
 
   function comma(amount)
     local formatted = amount
@@ -151,11 +151,7 @@ local function refreshZoneSmall(wgt)
     return formatted
   end
   lcd.drawText(2,0,comma(battDis).." "..battCell.."S Lipo "..wgt.options.Voltage.."v/cell")
-  if getValue("Cels") == 0 then 
-    lcd.drawText(2,18, "Not Detected") 
-  else
-    lcd.drawText(2,18,comma(mAhUsed).." Used / ".. string.format("%2.0f%%",  wgt.cellPercent).." Left")
-  end 
+  lcd.drawText(2,18,comma(mAhUsed).." Used / ".. string.format("%2.0f%%", wgt.cellPercent))
 end
 
 local function refresh(wgt)
